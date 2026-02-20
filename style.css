@@ -238,10 +238,9 @@ body {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 3rem;
-    align-items: start;
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .about-left {
@@ -273,32 +272,56 @@ body {
     line-height: 1.8;
 }
 
-.skills h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+/* Skills Container */
+.skills-container {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.skills-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 .skill-tags {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .skill-tag {
-    background: var(--card-bg);
-    color: var(--primary-color);
-    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.8rem 1.8rem;
+    border: 2px solid var(--accent-color);
+    background: transparent;
     border-radius: 30px;
-    border: 1px solid var(--border-color);
     transition: var(--transition);
-    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Bluish-red color for all skill buttons */
+.skill-1, .skill-2, .skill-3, .skill-4, .skill-5, .skill-6 {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 .skill-tag:hover {
-    background: var(--primary-color);
+    background: var(--accent-color);
     color: var(--bg-dark);
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 0, 110, 0.3);
 }
 
 /* Projects Section */

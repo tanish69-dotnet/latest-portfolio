@@ -58,18 +58,19 @@
                     </p>
                 </div>
                 </div>
-                <div class="about-right">
-                    <div class="skills">
-                    <h3>Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Responsive Design</span>
-                        <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">Git</span>
-                    </div>
-                    </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-container">
+                <h3 class="skills-title">Tech Stack</h3>
+                <p class="skills-subtitle">My preferred technologies and tools for building modern, responsive web applications</p>
+                <div class="skill-tags">
+                    <span class="skill-tag skill-1">HTML</span>
+                    <span class="skill-tag skill-2">CSS</span>
+                    <span class="skill-tag skill-3">JavaScript</span>
+                    <span class="skill-tag skill-4">Responsive Design</span>
+                    <span class="skill-tag skill-5">UI/UX Design</span>
+                    <span class="skill-tag skill-6">Git</span>
                 </div>
             </div>
         </div>
@@ -93,7 +94,7 @@
                         <span>Node/Express</span>
                         <span>MongoDB</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="https://roots-routes-pearl.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
                 </div>
 
                 <div class="project-card">
@@ -125,7 +126,7 @@
                         <span>ML</span>
                         <span>GIS</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="https://github.com/tanish69-dotnet/dss.sih" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
                 </div>
 
                 <div class="project-card">
@@ -153,15 +154,15 @@
             <p class="contact-subtitle">Have a project in mind? Get in touch and let's create something amazing together!</p>
             <div class="contact-content">
                 <div class="contact-form">
-                    <form>
+                    <form id="contact-form" action="https://formspree.io/f/xkovzekp" method="POST">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
@@ -233,6 +234,8 @@
         </div>
     </footer>
 
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

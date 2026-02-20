@@ -12,31 +12,49 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission
-const form = document.querySelector('.contact-form form');
+// Form submission with Formspree
+const form = document.getElementById('contact-form');
 if (form) {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         
-        // Get form values
-        const name = this.querySelector('input[placeholder="Your Name"]').value;
-        const email = this.querySelector('input[placeholder="Your Email"]').value;
-        const message = this.querySelector('textarea[placeholder="Your Message"]').value;
-        
-        // Simple validation
-        if (name && email && message) {
-            // Create mailto link
-            const mailtoLink = `mailto:tanish@example.com?subject=Portfolio Contact from ${name}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${name}%0D%0AEmail: ${email}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Reset form
-            this.reset();
-            alert('Thank you for your message! Your email client will open.');
-        } else {
-            alert('Please fill in all fields.');
-        }
+        // Show loading state
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Submit form to Formspree
+        fetch(this.action, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: new FormData(this)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('SUCCESS!');
+                submitBtn.innerText = '✓ Message Sent!';
+                submitBtn.style.backgroundColor = '#00ff41';
+                submitBtn.style.color = '#000';
+                form.reset();
+                setTimeout(() => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.style.color = '';
+                }, 3000);
+                submitBtn.disabled = false;
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.log('FAILED...', error);
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+            alert('Failed to send message. Please try again.');
+        });
     });
 }
 
