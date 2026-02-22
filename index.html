@@ -1,76 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Tanish</title>
+    <title>Tanish Ingole — Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Tanish Ingole — Web Developer & Designer specializing in modern, responsive web applications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <h1 class="logo">Portfolio</h1>
-            <ul class="nav-menu">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>Tanish<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><a href="#links" class="nav-link">Links</a></li>
             </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-inner">
-                <div class="hero-photo">
-                    <!-- Replace with your photo: assets/profile.jpg -->
-                    <img src="pf2.jpeg" alt="Tanish">
+                <div class="hero-photo reveal-left">
+                    <div class="photo-wrapper">
+                        <img src="pf2.jpeg" alt="Tanish Ingole">
+                        <div class="photo-ring"></div>
+                        <div class="photo-glow"></div>
+                    </div>
+                    <div class="status-badge">
+                        <span class="status-dot"></span> Available for work
+                    </div>
                 </div>
-                <div class="hero-text">
-                    <h1 class="hero-title">Hi, I'm <span class="highlight">Tanish</span></h1>
-                    <p class="hero-subtitle">Web Developer & Designer</p>
-                    <a href="#contact" class="cta-button">Get In Touch</a>
+                <div class="hero-text reveal-right">
+                    <p class="hero-greeting">Hello, World! 👋</p>
+                    <h1 class="hero-title">I'm <span class="highlight" id="typed-name">Tanish</span></h1>
+                    <p class="hero-subtitle"><span id="typewriter"></span><span class="type-cursor">|</span></p>
+                    <p class="hero-desc">
+                        A passionate <strong>Computer Science Engineering</strong> student building the web, one pixel
+                        at a time. I craft elegant solutions that merge high performance with beautiful design.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="cta-button primary">View My Work <i
+                                class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="cta-button secondary">Get In Touch</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-num" data-count="5">0</span><span>+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-count="2">0</span><span>+</span>
+                            <span class="stat-label">Years Learning</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-count="6">0</span><span>+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-left">
-                    <div class="about-text">
-                    <p>
-                        Hi, I'm Tanish, a second-year Computer Science Engineering student. Welcome to my portfolio! 
-                        I'm currently focused on improving my technical skills, building projects, and becoming the 
-                        best version of myself—both professionally and personally.
-                    </p>
-                    <p>
-                        I'm passionate about learning new technologies and pushing my boundaries as a developer. 
-                        Through hands-on projects and continuous learning, I aim to create meaningful solutions that 
-                        make an impact. I believe in the power of dedication, innovation, and growth in shaping a 
-                        successful career in technology.
-                    </p>
-                </div>
-                </div>
+            <div class="section-header reveal-up">
+                <span class="section-tag">// about_me</span>
+                <h2 class="section-title">About <span class="highlight">Me</span></h2>
+                <p class="section-subtitle">Get to know the person behind the code</p>
             </div>
-
-            <!-- Skills Section -->
-            <div class="skills-container">
-                <h3 class="skills-title">Tech Stack</h3>
-                <p class="skills-subtitle">My preferred technologies and tools for building modern, responsive web applications</p>
-                <div class="skill-tags">
-                    <span class="skill-tag skill-1">HTML</span>
-                    <span class="skill-tag skill-2">CSS</span>
-                    <span class="skill-tag skill-3">JavaScript</span>
-                    <span class="skill-tag skill-4">Responsive Design</span>
-                    <span class="skill-tag skill-5">UI/UX Design</span>
-                    <span class="skill-tag skill-6">Git</span>
+            <div class="about-content">
+                <div class="about-text reveal-up">
+                    <p>
+                        Hi, I'm <strong>Tanish</strong>, a second-year Computer Science Engineering student. Welcome to
+                        my portfolio! I'm currently focused on improving my technical skills, building projects, and
+                        becoming the best version of myself — both professionally and personally.
+                    </p>
+                    <p>
+                        I'm passionate about learning new technologies and pushing my boundaries as a developer. Through
+                        hands-on projects and continuous learning, I aim to create meaningful solutions that make an
+                        impact. I believe in the power of dedication, innovation, and growth in shaping a successful
+                        career in technology.
+                    </p>
+                    <a href="#contact" class="cta-button primary" style="margin-top:1.5rem;display:inline-flex">Let's
+                        Talk <i class="fas fa-paper-plane"></i></a>
+                </div>
+                <div class="skills-side">
+                    <h3 class="skills-title reveal-up" data-delay="150">Tech Stack</h3>
+                    <p class="skills-subtitle reveal-up" data-delay="220">My preferred technologies and tools for
+                        building modern, responsive web applications</p>
+                    <div class="marquee-wrapper">
+                        <div class="marquee-track">
+                            <!-- Set 1 -->
+                            <span class="skill-tag"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                            <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-tag"><i class="fas fa-paint-brush"></i> UI/UX</span>
+                            <span class="skill-tag"><i class="fas fa-wind"></i> Tailwind CSS</span>
+                            <span class="skill-tag"><i class="fas fa-mobile-screen"></i> Flutter</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> C</span>
+                            <span class="skill-tag"><i class="fas fa-file-code"></i> C++</span>
+                            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                            <!-- Set 2 — duplicate for seamless loop -->
+                            <span class="skill-tag"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                            <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-tag"><i class="fas fa-paint-brush"></i> UI/UX</span>
+                            <span class="skill-tag"><i class="fas fa-wind"></i> Tailwind CSS</span>
+                            <span class="skill-tag"><i class="fas fa-mobile-screen"></i> Flutter</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> C</span>
+                            <span class="skill-tag"><i class="fas fa-file-code"></i> C++</span>
+                            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,70 +163,123 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header reveal-up">
+                <span class="section-tag">// featured_projects</span>
+                <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+                <p class="section-subtitle">A selection of my best work that I'm proud of</p>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-route"></i>
+
+                <div class="project-card reveal-up" data-delay="0">
+                    <div class="project-card-top">
+                        <div class="project-icon-wrap">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="project-links-top">
+                            <a href="https://roots-routes-pearl.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
                     </div>
                     <h3>RootsNRoutes</h3>
-                    <p>Community-driven travel planner that helps users build multi-stop itineraries, discover
-                       local experiences, and share routes with fellow travelers. Includes map integration and
-                       personalized recommendations.</p>
+                    <p>Community-driven travel planner that helps users build multi-stop itineraries, discover local
+                        experiences, and share routes with fellow travelers. Includes map integration and personalized
+                        recommendations.</p>
                     <div class="project-tech">
                         <span>Maps API</span>
                         <span>Node/Express</span>
                         <span>MongoDB</span>
                     </div>
-                    <a href="https://roots-routes-pearl.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
+                    <a href="https://roots-routes-pearl.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-cloud-sun"></i>
+                <div class="project-card reveal-up" data-delay="100">
+                    <div class="project-card-top">
+                        <div class="project-icon-wrap">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <div class="project-links-top">
+                            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
                     </div>
                     <h3>Weather Forecast</h3>
-                    <p>Real-time weather forecast application using a public Weather API. Shows current
-                       conditions, hourly and 7-day forecasts, and interactive charts with location search
-                       and geolocation support.</p>
+                    <p>Real-time weather forecast application using a public Weather API. Shows current conditions,
+                        hourly and 7-day forecasts, and interactive charts with location search and geolocation support.
+                    </p>
                     <div class="project-tech">
                         <span>API Integration</span>
                         <span>Chart.js</span>
                         <span>JavaScript</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="project-card reveal-up" data-delay="200">
+                    <div class="project-card-top">
+                        <div class="project-icon-wrap">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="project-links-top">
+                            <a href="https://github.com/tanish69-dotnet/dss.sih" target="_blank"
+                                rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
-                    <h3>FRA System (SIH Hackathon)</h3>
-                    <p>Flood Risk Assessment (FRA) system developed during the SIH hackathon. Aggregates
-                       sensor data, weather inputs, and geospatial information to predict high-risk zones and
-                       deliver alerts through a dashboard for first responders and communities.</p>
+                    <h3>FRA System <span class="badge">SIH Hackathon</span></h3>
+                    <p>Flood Risk Assessment (FRA) system developed during the SIH hackathon. Aggregates sensor data,
+                        weather inputs, and geospatial information to predict high-risk zones and deliver alerts for
+                        first responders.</p>
                     <div class="project-tech">
                         <span>Python</span>
                         <span>ML</span>
                         <span>GIS</span>
                     </div>
-                    <a href="https://github.com/tanish69-dotnet/dss.sih" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>
+                    <a href="https://github.com/tanish69-dotnet/dss.sih" target="_blank" rel="noopener noreferrer"
+                        class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-tasks"></i>
+                <div class="project-card reveal-up" data-delay="0">
+                    <div class="project-card-top">
+                        <div class="project-icon-wrap">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-links-top">
+                            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
                     </div>
                     <h3>Task Management App</h3>
-                    <p>A progressive web app for task management with local storage integration. Users can create, 
-                       edit, and organize their daily tasks efficiently.</p>
+                    <p>A progressive web app for task management with local storage integration. Users can create, edit,
+                        and organize their daily tasks efficiently with drag-and-drop support.</p>
                     <div class="project-tech">
                         <span>JavaScript</span>
                         <span>LocalStorage</span>
                         <span>PWA</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
+
+                <div class="project-card reveal-up featured-card" data-delay="100">
+                    <div class="project-card-top">
+                        <div class="project-icon-wrap ps-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="project-links-top">
+                            <a href="https://clonepsfinal-yq41.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>PlayStation Clone <span class="badge featured-badge">Featured</span></h3>
+                    <p>A pixel-perfect clone of the PlayStation India homepage built with React and Tailwind CSS.
+                        Features an interactive image slider, mobile-responsive navigation, newsletter form validation,
+                        and faithful replication of the official PS design system.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Tailwind CSS</span>
+                        <span>Vite</span>
+                    </div>
+                    <a href="https://clonepsfinal-yq41.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -150,50 +287,69 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="contact-subtitle">Have a project in mind? Get in touch and let's create something amazing together!</p>
+            <div class="section-header reveal-up">
+                <span class="section-tag">// contact_me</span>
+                <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+                <p class="section-subtitle">Have a project in mind? Get in touch and let's create something amazing
+                    together!</p>
+            </div>
             <div class="contact-content">
-                <div class="contact-form">
+                <div class="contact-form reveal-left">
                     <form id="contact-form" action="https://formspree.io/f/xkovzekp" method="POST">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <label>Your Name</label>
+                            <input type="text" name="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <label>Your Email</label>
+                            <input type="email" name="email" placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <label>Your Message</label>
+                            <textarea name="message" placeholder="Hi Tanish, I'd love to collaborate on..." rows="5"
+                                required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
-                <div class="contact-info">
+                <div class="contact-info reveal-right">
                     <div class="info-item">
-                        <i class="fas fa-envelope"></i>
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
                         <div>
                             <h4>Email</h4>
                             <p><a href="mailto:ingoletanish50@gmail.com">ingoletanish50@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Your City, Country</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
                         <div>
                             <h4>Phone</h4>
                             <p><a href="tel:+919867550587">+91 98675 50587</a></p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-clock"></i>
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>India 🇮🇳</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
                         <div>
                             <h4>Availability</h4>
-                            <p>Available for freelance projects</p>
+                            <p>Open to freelance &amp; internships</p>
+                        </div>
+                    </div>
+                    <div class="availability-card">
+                        <div class="avail-dot"></div>
+                        <div>
+                            <strong>Currently Available</strong>
+                            <p>I'm open to exciting new opportunities and collaborations. Let's build something great!
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -201,27 +357,35 @@
         </div>
     </section>
 
-    <!-- Links Section -->
+    <!-- Links / Social Section -->
     <section id="links" class="section links">
         <div class="container">
-            <h2 class="section-title">Connect With Me</h2>
-            <p class="links-subtitle">Follow me on social media and check out my work</p>
-            <div class="social-links">
+            <div class="section-header reveal-up">
+                <span class="section-tag">// find_me_online</span>
+                <h2 class="section-title">Connect With <span class="highlight">Me</span></h2>
+                <p class="section-subtitle">Follow me on social media and check out my work</p>
+            </div>
+            <div class="social-links reveal-up">
                 <a href="https://github.com/tanish69-dotnet" target="_blank" class="social-btn github">
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
+                    <span class="social-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
-                <a href="https://www.linkedin.com/in/tanish-ingole-54830137b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-btn linkedin">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/tanish-ingole-54830137b" target="_blank"
+                    class="social-btn linkedin">
+                    <i class="fab fa-linkedin-in"></i>
                     <span>LinkedIn</span>
+                    <span class="social-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
-                <a href="https://www.instagram.com/tanishingole?igsh=NzUxbW1rZTd3eGs1" target="_blank" class="social-btn instagram">
+                <a href="https://www.instagram.com/tanishingole" target="_blank" class="social-btn instagram">
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
+                    <span class="social-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
                 <a href="mailto:ingoletanish50@gmail.com" class="social-btn email">
                     <i class="fas fa-paper-plane"></i>
                     <span>Email</span>
+                    <span class="social-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
         </div>
@@ -230,12 +394,15 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Tanish. All rights reserved. Crafted with <span class="heart">❤</span></p>
+            <a href="#home" class="footer-logo">
+                <span class="logo-bracket">&lt;</span>Tanish<span class="logo-bracket">/&gt;</span>
+            </a>
+            <p class="footer-tagline">Crafted with <span class="heart">❤</span> and a lot of ☕</p>
+            <p class="footer-copy">&copy; 2026 Tanish Ingole. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- EmailJS Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
